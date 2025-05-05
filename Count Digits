@@ -1,0 +1,32 @@
+lass Solution:
+    def countDigit(self, n):
+        """
+        Count the number of digits in an integer.
+
+        Parameters:
+        n (int): A non-negative integer (0 <= n <= 5000)
+
+        Returns:
+        int: Number of digits in the input number
+
+        Example:
+        >>> sol = Solution()
+        >>> sol.countDigit(4)
+        1
+        >>> sol.countDigit(14)
+        2
+        >>> sol.countDigit(0)
+        1
+        """
+
+        # Special case: if n is 0, it has 1 digit
+        if n == 0:
+            return 1
+
+        count = 0
+        while n > 0:
+            # Remove the last digit
+            n = n // 10
+            # Increase the count
+            count += 1
+        return count
